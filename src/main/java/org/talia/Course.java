@@ -5,13 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+
 @EqualsAndHashCode
 @Getter
 @Setter
-public class Student {
+public class Course {
     private String courseId;
     private double credits;
     private Department department;
-    private
-
+    private ArrayList<Assignment> assignments;
+    private ArrayList<Student> registeredStudents;
+    private ArrayList<Double> finalScores;
+    static int nextId;
 }
