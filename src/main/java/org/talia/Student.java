@@ -20,7 +20,11 @@ public class Student {
 
     // should these methods be static?
     public static boolean registerCourse(Course course) {
-        return false;
+        if (registeredCourses.contains(course)) {
+            return false;
+        }
+        registeredCourses.add(course);
+            return true;
     }
 
     public static boolean dropCourse(Course course) {
