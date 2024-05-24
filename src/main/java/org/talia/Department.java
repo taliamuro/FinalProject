@@ -14,7 +14,6 @@ public class Department {
     private String departmentName;
     private static int nextId = 1;
 
-    // should there be two inputs here?
     public Department(String departmentName) {
         if (validateDepartmentName(departmentName)) {
             this.departmentId = "D" + nextId++;
@@ -26,16 +25,6 @@ public class Department {
     }
 
     public static boolean validateDepartmentName(String departmentName) {
-        if (departmentName == null || departmentName.isEmpty()) {
-            return false;
-        }
-
-        for (int i = 0; i < departmentName.length() - 1; i++) {
-            char c = departmentName.charAt(i);
-            if (c == ' ' || c == Character.isLetter(c)) {
-                return true;
-            }
-        }
-        return false;
+        return departmentName != null && departmentName.matches("[a-zA-Z ]+");
     }
 }
