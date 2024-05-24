@@ -11,11 +11,20 @@ import lombok.ToString;
 @Setter
 public class Util {
     public static String toTitleCase(String strIn) {
-        int spaceIdx = strIn.indexOf(" ");
-        String fWord = strIn.substring(0,spaceIdx);
-        String lWord = strIn.substring(spaceIdx + 1);
-        fWord = fWord.substring(0, 1).toUpperCase();
-        lWord = lWord.substring(0, 1);
-        return fWord + " " + lWord;
+        if (strIn == null || strIn.isEmpty()) {
+            return strIn;
+        }
+
+        String[] words = strIn.split(" ");
+        StringBuilder titleCased = new StringBuilder();
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                titleCased.append(word.substring(0, 1).toUpperCase())
+                        .append(word.substring(1).toLowerCase())
+                        .append(" ");
+            }
+        }
+
+        return titleCased.toString().trim();
     }
 }

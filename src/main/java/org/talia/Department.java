@@ -27,4 +27,8 @@ public class Department {
     public static boolean validateDepartmentName(String departmentName) {
         return departmentName != null && departmentName.matches("[a-zA-Z ]+");
     }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = Util.toTitleCase(departmentName);
+    }
 }

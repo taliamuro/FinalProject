@@ -10,10 +10,15 @@ import java.util.ArrayList;
 @Setter
 public class Course {
     private String courseId;
+    private String courseName;
     private double credits;
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
     private ArrayList<Double> finalScores;
     static int nextId;
+
+    public void setCourseName(String courseName) {
+        this.courseName = Util.toTitleCase(courseName);
+    }
 }

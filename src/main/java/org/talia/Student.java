@@ -31,4 +31,8 @@ public class Student {
         return false;
     }
 
+    public void setStudentName(String studentName) {
+        this.studentName = Util.toTitleCase(studentName);
+    }
+
 }
