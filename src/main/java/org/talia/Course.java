@@ -21,4 +21,16 @@ public class Course {
     public void setCourseName(String courseName) {
         this.courseName = Util.toTitleCase(courseName);
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Course ID: ").append(courseId).append(", Course Name: ").append(courseName).append(", Department: ")
+                .append(department.getDepartmentName()).append("\n");
+        sb.append("Registered Students:\n");
+        for (Student student : registeredStudents) {
+            sb.append(student.toSimplifiedString()).append("\n");
+        }
+
+        return sb.toString();
+    }
 }
