@@ -9,12 +9,18 @@ import java.util.Random;
 
 public class Assignment {
     private String assignmentId;
+    @Getter
     private String assignmentName;
+    @Getter
     private double weight;
     private int maxScore;
     private double assignmentAverage;
+    @Getter
     private ArrayList<Integer> scores;
     private static int nextId;
+
+    public Assignment(String assignmentName, double weight, int maxScore) {
+    }
 
     public void calcAssignmentAvg(ArrayList<Integer> scores) {
         if (scores.isEmpty()) {
