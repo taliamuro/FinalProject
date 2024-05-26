@@ -7,6 +7,13 @@ import lombok.ToString;
 
 public class Util {
     public static String toTitleCase(String strIn) {
+        if (strIn == null) {
+            return null;
+        }
+        if (strIn == "") {
+            return strIn;
+        }
+
         int spaceIdx = strIn.indexOf(' ');
 
         // title case first word
