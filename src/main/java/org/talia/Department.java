@@ -24,6 +24,11 @@ public class Department {
         }
     }
 
+    /**
+     * Checks if a department name contains only letters or space
+     * @param departmentName the input string
+     * @return true if the department name is valid
+     */
     public static boolean validateDepartmentName(String departmentName) {
         return departmentName != null && departmentName.matches("[a-zA-Z ]+");
     }
