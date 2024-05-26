@@ -45,88 +45,63 @@ public class CourseTest {
     @Test
     public void testIsAssignmentWeightValid1() {
         int[] expectedResult = {85, 90, 80};
-        int result = Course.calcStudentsAverage();
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid2() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid3() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid4() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid5() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid6() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid7() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }
 
     @Test
     public void testIsAssignmentWeightValid8() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
-
-        Assertions.assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void testIsAssignmentWeightValid9() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
-
-        Assertions.assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void testIsAssignmentWeightValid10() {
-        int[] nums1 = {};
-        int expectedResult = 0;
-        int result = Assignment.calcAssignmentAvg(nums1);
+        int[] expectedResult = {85, 90, 80};
+        int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
     }

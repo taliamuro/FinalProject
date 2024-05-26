@@ -13,9 +13,9 @@ public class Course {
     private String courseName;
     private double credits;
     private Department department;
-    private ArrayList<Assignment> assignments;
+    private static ArrayList<Assignment> assignments;
     @Getter
-    private ArrayList<Student> registeredStudents;
+    private static ArrayList<Student> registeredStudents;
     private ArrayList<Double> finalScores;
     static int nextId;
 
@@ -65,7 +65,7 @@ public class Course {
      * Calculates the weighted average score of a student
      * @return the weighted average score of a student
      */
-    public int[] calcStudentsAverage() {
+    public static int[] calcStudentsAverage() {
         int[] studentsAverages = new int[registeredStudents.size()];
 
         for (int i = 0; i < registeredStudents.size(); i++) {
