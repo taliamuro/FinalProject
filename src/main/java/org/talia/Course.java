@@ -14,6 +14,7 @@ public class Course {
     private double credits;
     private Department department;
     private ArrayList<Assignment> assignments;
+    @Getter
     private ArrayList<Student> registeredStudents;
     private ArrayList<Double> finalScores;
     static int nextId;

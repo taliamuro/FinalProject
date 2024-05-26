@@ -55,7 +55,7 @@ public class Student {
      * @param course the input course
      * @return true if the course is registered
      */
-    public static boolean dropCourse(Course course) {
+    public boolean dropCourse(Course course) {
         if (!registeredCourses.contains(course)) {
             return false;
         }
@@ -68,17 +68,6 @@ public class Student {
 
     public void setStudentName(String studentName) {
         this.studentName = Util.toTitleCase(studentName);
-    }
-
-    public boolean dropCourse(Course course) {
-        if (!registerCourse.contains(course)) {
-            return false;
-        }
-
-        registeredCourses.remove(course);
-        course.getRegisteredStudents().remove(this);
-
-        return true;
     }
 
     @Override
@@ -94,7 +83,6 @@ public class Student {
     }
 
     public String toSimplifiedString2() {
-        return studentName;"Student ID: " + studentId + ", Student Name: " + studentName + ", Department: "
-                + department.getDepartmentName();
+        return "Student ID: " + studentId + ", Student Name: " + studentName + ", Department: " + department.getDepartmentName();
     }
 }

@@ -11,6 +11,7 @@ import lombok.ToString;
 @Setter
 public class Department {
     private String departmentId;
+    @Getter
     private String departmentName;
     private static int nextId = 1;
 
