@@ -18,6 +18,11 @@ public class Course {
     private ArrayList<Double> finalScores;
     static int nextId;
 
+
+    /**
+     * Checks if the sum of weights of all assignments of that course equals to 1 (100%)
+     * @return true if the course equals to 1
+     */
     public boolean isAssignmentWeightValid() {
         double sum = 0.0;
         for (Assignment assignment : assignments) {
@@ -27,6 +32,12 @@ public class Course {
         return Math.abs(sum - 1.0) < 0.0001;
     }
 
+    /**
+     * adds a student to the student list of the course, and adds a new null element to each assignment of this course,
+     * and add a new null element for the finalScore
+     * @param student the input student
+     * @return true if course does not contain student
+     */
     public boolean registerStudent(Student student) {
         if (registeredStudents.contains(student)) {
             return false;
@@ -43,6 +54,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * Calculates the weighted average score of a student
+     * @return the weighted average score of a student
+     */
     public int[] calcStudentsAverage() {
         int[] studentsAverage = new int[registeredStudents.size()];
 
@@ -72,6 +87,13 @@ public class Course {
         return studentsAverage;
     }
 
+    /**
+     * Adds a new assignment to the course
+     * @param assignmentName the input string
+     * @param weight the input double
+     * @param maxScore the input int
+     * @return true if the assignment has been added
+     */
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
         Assignment newAssignment = new Assignment(assignmentName, weight, maxScore);
         assignments.add(newAssignment);
@@ -83,23 +105,11 @@ public class Course {
         return true;
     }
 
-    public void displayScores() {
-        double[] assignmentAverages = new double[assignments.size()];
+    /**
+     * Generates random scores for each assignment and student, and calculates the final score for each student
+     */
+    public void generateScores() {
 
-        for (int i = 0; i < assignments.size(); i++) {
-            Assignment assignment = assignments.get(i);
-            double sum = 0.0;
-            int count = 0;
-
-            for (Integer score : assignment.getScores()) {
-                if (score != null) {
-                    sum += score;
-                    count++;
-                }
-            }
-
-            assignmentAverages[i] = count > 0 ? sum / count : 0.0;
-        }
     }
 
     public void setCourseName(String courseName) {

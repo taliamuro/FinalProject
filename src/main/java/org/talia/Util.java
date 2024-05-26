@@ -5,26 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@ToString
-@EqualsAndHashCode
-@Getter
-@Setter
 public class Util {
     public static String toTitleCase(String strIn) {
-        if (strIn == null || strIn.isEmpty()) {
-            return strIn;
-        }
+        int spaceIdx = strIn.indexOf(' ');
 
-        String[] words = strIn.split(" ");
-        StringBuilder titleCased = new StringBuilder();
-        for (String word : words) {
-            if (!word.isEmpty()) {
-                titleCased.append(word.substring(0, 1).toUpperCase())
-                        .append(word.substring(1).toLowerCase())
-                        .append(" ");
-            }
-        }
+        // title case first word
+        String fWord = strIn.substring(0, spaceIdx);
+        String fpart1 = fWord.substring(0, 1).toUpperCase();
+        String fpart2 = fWord.substring(1).toLowerCase();
+        fWord = fpart1 + fpart2;
 
-        return titleCased.toString().trim();
+        // title case last word
+        String lWord = strIn.substring(spaceIdx + 1);
+        String lpart1 = lWord.substring(0, 1).toUpperCase();
+        String lpart2 = lWord.substring(1).toLowerCase();
+        lWord = lpart1 + lpart2;
+    return fWord + " " + lWord;
     }
 }
