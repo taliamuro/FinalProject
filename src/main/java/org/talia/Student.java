@@ -29,6 +29,12 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    /**
+     * Adds course to student's registeredCourses list, adds student to the course's registeredStudents list,
+     * appends a null for the scores of each assignment of the course.
+     * @param course the input course
+     * @return true if the course is not registered
+     */
     public boolean registerCourse(Course course) {
         if (registeredCourses.contains(course)) {
             return false;
@@ -43,8 +49,21 @@ public class Student {
         return true;
     }
 
+    /**
+     * Removes the course from the student's registeredCourses list, and removes the student from the course's
+     * registeredStudents list
+     * @param course the input course
+     * @return true if the course is registered
+     */
     public static boolean dropCourse(Course course) {
-        return false;
+        if (!registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.remove(course);
+        course.getRegisteredStudents().remove(this);
+
+        return true;
     }
 
     public void setStudentName(String studentName) {
