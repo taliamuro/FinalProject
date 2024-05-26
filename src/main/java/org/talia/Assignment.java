@@ -1,8 +1,6 @@
 package org.talia;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,7 +15,7 @@ public class Assignment {
     private double assignmentAverage;
     @Getter
     private ArrayList<Integer> scores;
-    private static int nextId;
+    private static int nextId = 1;
 
     public Assignment(String assignmentName, double weight, int maxScore) {
     }
@@ -27,16 +25,20 @@ public class Assignment {
      * Calculates the average score for one assignment
      * @param scores the input int array
      */
-    public void calcAssignmentAvg(ArrayList<Integer> scores) {
-        if (scores.isEmpty()) {
-            System.out.println("null");
+    public static int calcAssignmentAvg(int[] scores) {
+        if (scores == null) {
+            return 0;
+        }
+
+        if (scores.length == 0) {
+            return 0;
         }
 
         int sum = 0;
         for (int score : scores) {
             sum += score;
         }
-        System.out.println(sum/scores.size());;
+        return sum/scores.length;
     }
 
     /**
