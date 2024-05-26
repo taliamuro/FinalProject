@@ -17,7 +17,7 @@ public class Student {
     private Address address;
     private Department department;
     private ArrayList<Course> registeredCourses;
-    private static int nextId = 0;
+    private static int nextId = 1;
 
     public Student(String studentId, String studentName, Gender gender, Address address, Department department,
                    ArrayList<Course> registeredCourses) {

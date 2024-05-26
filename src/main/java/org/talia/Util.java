@@ -1,10 +1,5 @@
 package org.talia;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 public class Util {
     public static String toTitleCase(String strIn) {
         if (strIn == null) {
