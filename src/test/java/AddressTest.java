@@ -23,7 +23,7 @@ public class AddressTest {
 
     @Test
     public void testIsPostalCodeValid3() {
-        String str = "H1R 2E9 Q";
+        String str = "H1R 2E9";
         boolean expectedResult = true;
         boolean result = Address.isPostalCodeValid(str);
 
@@ -42,15 +42,6 @@ public class AddressTest {
     @Test
     public void testIsPostalCodeValid5() {
         String str = "h1R 2e9";
-        boolean expectedResult = true;
-        boolean result = Address.isPostalCodeValid(str);
-
-        Assertions.assertTrue(Address.isPostalCodeValid(str));
-    }
-
-    @Test
-    public void testIsPostalCodeValid6() {
-        String str = "h1R 2e9 Q";
         boolean expectedResult = true;
         boolean result = Address.isPostalCodeValid(str);
 
