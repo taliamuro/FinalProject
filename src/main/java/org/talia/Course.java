@@ -20,6 +20,12 @@ public class Course {
     static int nextId;
 
 
+    public Course(String courseId, String courseName, Department department) {
+        this.courseId = "C" + nextId++;
+        this.courseName = courseName;
+        this.department = department;
+    }
+
     /**
      * Checks if the sum of weights of all assignments of that course equals to 1 (100%)
      * @return true if the course equals to 1
@@ -30,7 +36,7 @@ public class Course {
             sum+= assignment.getWeight();
         }
 
-        return Math.abs(sum - 1.0) < 0.0001;
+        return sum == 1;
     }
 
     /**
@@ -60,32 +66,24 @@ public class Course {
      * @return the weighted average score of a student
      */
     public int[] calcStudentsAverage() {
-        int[] studentsAverage = new int[registeredStudents.size()];
+        int[] studentsAverages = new int[registeredStudents.size()];
 
         for (int i = 0; i < registeredStudents.size(); i++) {
-            Student student = registeredStudents.get(i);
             double weightedSum = 0.0;
-            int totalWeight = 0;
+            double totalWeight = 0.0;
 
-            for (int j = 0; j < assignments.size(); j++) {
-                Assignment assignment = assignments.get(j);
+            for (Assignment assignment : assignments) {
                 Integer score = assignment.getScores().get(i);
-
                 if (score != null) {
-                    weightedSum += (double) score * assignment.getWeight();
+                    weightedSum += score * assignment.getWeight();
                     totalWeight += assignment.getWeight();
                 }
             }
 
-            if (totalWeight > 0) {
-                studentsAverage[i] = (int) Math.round(weightedSum / totalWeight);
-            } else {
-                studentsAverage[i] = 0;
-
-            }
+            studentsAverages[i] = (int) Math.round(weightedSum / totalWeight);
         }
 
-        return studentsAverage;
+        return studentsAverages;
     }
 
     /**

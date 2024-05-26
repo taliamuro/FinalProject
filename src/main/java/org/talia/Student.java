@@ -16,13 +16,14 @@ public class Student {
     private Gender gender;
     private Address address;
     private Department department;
+    @Getter
     private ArrayList<Course> registeredCourses;
     private static int nextId = 1;
 
     public Student(String studentId, String studentName, Gender gender, Address address, Department department,
                    ArrayList<Course> registeredCourses) {
         this.studentId = "S" + nextId++;
-        this.studentName = studentName;
+        this.studentName = Util.toTitleCase(studentName);
         this.gender = gender;
         this.address = address;
         this.department = department;

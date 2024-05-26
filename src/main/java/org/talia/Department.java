@@ -10,6 +10,7 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Department {
+    @Getter
     private String departmentId;
     @Getter
     private String departmentName;
