@@ -22,6 +22,11 @@ public class Assignment {
     public Assignment(String assignmentName, double weight, int maxScore) {
     }
 
+
+    /**
+     * Calculates the average score for one assignment
+     * @param scores the input int array
+     */
     public void calcAssignmentAvg(ArrayList<Integer> scores) {
         if (scores.isEmpty()) {
             System.out.println("null");
@@ -34,6 +39,9 @@ public class Assignment {
         System.out.println(sum/scores.size());;
     }
 
+    /**
+     * Generates random scores for all students in an assignment
+     */
     public void generateRandomScore() {
         Random rand = new Random();
         int randomNumber = rand.nextInt(0,11);
