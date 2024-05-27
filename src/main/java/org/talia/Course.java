@@ -112,6 +112,35 @@ public class Course {
 
     }
 
+    public void displayScores() {
+        System.out.println("Course: " + courseName + ", (" + courseId + ")");
+
+        System.out.println("Course: " + courseName + ", (" + courseId + ")");
+
+        System.out.printf("%-20s", "");
+        for (Assignment assignment : assignments) {
+            System.out.printf("%-15s", assignment.getAssignmentName());
+        }
+
+        System.out.printf("%-15s", "Final Score");
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            Student student = registeredStudents.get(i);
+            System.out.printf("%-20s", student.getStudentName());
+            for (Assignment assignment : assignments) {
+                int score = assignment.getScores().get(i);
+                System.out.printf("%-15s", (score != 0) ? score : "null");
+            }
+            System.out.printf("%-15s", finalScores.get(i).intValue());
+        }
+
+        System.out.printf("%-20s", "Average");
+        for (Assignment assignment : assignments) {
+            System.out.printf("%-15s", (Object) calcStudentsAverage());
+        }
+        System.out.println();
+    }
+
     public void setCourseName(String courseName) {
         this.courseName = Util.toTitleCase(courseName);
     }
