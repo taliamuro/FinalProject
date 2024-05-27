@@ -36,6 +36,7 @@ public class Department {
     }
 
     public void setDepartmentName(String departmentName) {
+        this.departmentId = departmentId;
         this.departmentName = Util.toTitleCase(departmentName);
     }
 }

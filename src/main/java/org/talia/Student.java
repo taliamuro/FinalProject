@@ -41,7 +41,12 @@ public class Student {
             return false;
         }
         registeredCourses.add(course);
-        course.getRegisteredStudents().add(this);
+
+        if (!course.getRegisteredStudents().contains(this)) {
+            course.getRegisteredStudents().add(this);
+        }
+
+        ArrayList<Integer> scores = new ArrayList<>();
 
         for (Assignment assignment : course.getAssignments()) {
             assignment.getScores().add(null);

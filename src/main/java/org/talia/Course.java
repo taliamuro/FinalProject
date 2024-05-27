@@ -13,6 +13,7 @@ public class Course {
     private String courseName;
     private double credits;
     private Department department;
+    @Getter
     private static ArrayList<Assignment> assignments;
     @Getter
     private static ArrayList<Student> registeredStudents;
@@ -30,7 +31,7 @@ public class Course {
      * Checks if the sum of weights of all assignments of that course equals to 1 (100%)
      * @return true if the course equals to 1
      */
-    public boolean isAssignmentWeightValid() {
+    public static boolean isAssignmentWeightValid() {
         double sum = 0.0;
         for (Assignment assignment : assignments) {
             sum+= assignment.getWeight();
@@ -93,7 +94,7 @@ public class Course {
      * @param maxScore the input int
      * @return true if the assignment has been added
      */
-    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+    public static boolean addAssignment(String assignmentName, double weight, int maxScore) {
         Assignment newAssignment = new Assignment(assignmentName, weight, maxScore);
         assignments.add(newAssignment);
 

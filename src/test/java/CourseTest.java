@@ -6,6 +6,9 @@ import org.talia.*;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class CourseTest {
     @Before
     public void setUp() {
@@ -48,5 +51,38 @@ public class CourseTest {
         int[] result = Course.calcStudentsAverage();
 
         Assertions.assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void testIsAssignmentWeightValid1() {
+        assertFalse(Course.isAssignmentWeightValid());
+    }
+
+    @Test
+    public void testIsAssignmentWeightValid2() {
+        Course.addAssignment("Assignment 1", 1.0, 100);
+        assertTrue(Course.isAssignmentWeightValid());
+    }
+
+    @Test
+    public void testIsAssignmentWeightValid3() {
+        Course.addAssignment("Assignment 1", 0.5, 100);
+        Course.addAssignment("Assignment 2", 0.5, 100);
+        assertTrue(Course.isAssignmentWeightValid());
+    }
+
+    @Test
+    public void testIsAssignmentWeightValid4() {
+        Course.addAssignment("Assignment 1", 0.5, 100);
+        Course.addAssignment("Assignment 2", 0.3, 100);
+        assertFalse(Course.isAssignmentWeightValid());
+    }
+
+    @Test
+    public void testIsAssignmentWeightValid5() {
+        Course.addAssignment("Assignment 1", 0.2, 100);
+        Course.addAssignment("Assignment 2", 0.2, 100);
+        Course.addAssignment("Assignment 2", 0.6, 100);
+        assertTrue(Course.isAssignmentWeightValid());
     }
 }
