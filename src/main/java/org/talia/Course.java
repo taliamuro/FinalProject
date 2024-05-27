@@ -132,7 +132,7 @@ public class Course {
 
         System.out.printf("%-20s", "Average");
         for (Assignment assignment : assignments) {
-            System.out.printf("%-15s", (Object) calcStudentsAverage());
+            System.out.printf("%-15s", calcStudentsAverage());
         }
         System.out.println();
     }

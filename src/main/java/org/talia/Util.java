@@ -5,7 +5,7 @@ public class Util {
         if (strIn == null) {
             return null;
         }
-        if (strIn == "") {
+        if (strIn.equals(" ")) {
             return strIn;
         }
 
