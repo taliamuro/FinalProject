@@ -106,12 +106,8 @@ public class Course {
     }
 
     /**
-     * Generates random scores for each assignment and student, and calculates the final score for each student
+     * Displays the scores of a course in a table with the assignment averages and student weighted average
      */
-    public void generateScores() {
-
-    }
-
     public void displayScores() {
         System.out.println("Course: " + courseName + ", (" + courseId + ")");
 
